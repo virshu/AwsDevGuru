@@ -38,9 +38,9 @@ function checkForAlertViolation(uuid, tc) {
         if(err){
             console.log('Error', err);
         }else{
-            console.log('Success', data.item);
-            var tcMax = parseFloat(data.item.tempMax.N);
-            var tcMin = parseFloat(data.item.tempMin.N);
+            console.log('Success', data.Item);
+            var tcMax = parseFloat(data.Item.tempMax.N);
+            var tcMin = parseFloat(data.Item.tempMin.N);
             console.log('tcMax: ' + tcMax + 'tcMin: ' + tcMin + 'tc: '+ tc);
             if(tc > tcMax){
                 console.log('tcMax violated');
