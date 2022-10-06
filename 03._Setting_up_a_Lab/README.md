@@ -16,10 +16,10 @@ On Linux, the command-line SSH client is perfect.
 
 ### Mac
 Mac OSX comes pre-installed with an SSH client.  Open your Applications->Utilities folder and open the Terminal Application.  
-![alt text](https://bitbucket.org/awsdevguru/awsdevassoc/raw/d8687368b2b1a8782386b582b9f7055bfbb3a77d/03._Setting_up_a_Lab/images/finder_terminal.png "Apps->Utilities->Terminal")
+![Mac Terminal](https://bitbucket.org/awsdevguru/awsdevassoc/raw/cd3108e6d85d08f561136505f372f2728048a562/03._Setting_up_a_Lab/images/terminal_ssh.png)
 
 SSH can be run from the command line in the resulting window.  
-![alt text](https://bitbucket.org/awsdevguru/awsdevassoc/raw/d8687368b2b1a8782386b582b9f7055bfbb3a77d/03._Setting_up_a_Lab/images/terminal_ssh.png "Apps->Utilities->Terminal")
+![Terminal SSH](https://bitbucket.org/awsdevguru/awsdevassoc/raw/cd3108e6d85d08f561136505f372f2728048a562/03._Setting_up_a_Lab/images/terminal_ssh.png)
 
 
 ## AWS CLI Installation
@@ -31,4 +31,4 @@ The AWS CLI is included in the Amazon Linux AMI running in EC2.
 ### Windows
 The Windows AWS CLI installer can be downloaded from:  
 [Windows AWS CLI Installer](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)  
-![alt text](https://bitbucket.org/awsdevguru/awsdevassoc/raw/923b70c2bad442371d6858b779aff3bf73d04eb3/03._Setting_up_a_Lab/images/windows_aws_cli_version.PNG "Windows AWS CLI Version")
+![Windows CLI Installer](https://bitbucket.org/awsdevguru/awsdevassoc/raw/cd3108e6d85d08f561136505f372f2728048a562/03._Setting_up_a_Lab/images/windows_aws_cli_version.PNG)
