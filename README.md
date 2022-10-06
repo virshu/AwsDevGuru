@@ -5,13 +5,13 @@ This course, "AWS Certified Developer Complete Video Course" focuses on the role
 
 ## Topics include: 
 
-**Module 1 Course and AWS Overview**
+**Course and AWS Overview**
 
 * Lesson 1 Course Overview  
 * Lesson 2 Cloud Services  
 * Lesson 3 Setting up a Lab  
 
-**Module 2 AWS Foundational Services**  
+**AWS Foundational Services**  
 
 * Lesson 4 AWS CLI & SDK  
 * Lesson 5 Identity and Access Management (IAM)  
@@ -19,25 +19,25 @@ This course, "AWS Certified Developer Complete Video Course" focuses on the role
 * Lesson 7 Elastic Compute Cloud (EC2)  
 * Lesson 8 Route 53 DNS  
 
-**Module 3 Database and Storage Services**  
+**Database and Storage Services**  
 
 * Lesson 9 Simple Storage Service (S3)  
 * Lesson 10 Databased (RDS / EC2)  
 * Lesson 11 DynamoDB (NoSQL)  
 
-**Module 4 Messaging Services**  
+**Messaging Services**  
 
 * Lesson 12 Simple Queue Service (SQS)  
 * Lesson 13 Simple Notification Service (SNS)  
 
-**Module 5 Execution Services**  
+**Execution Services**  
 
-* Lesson 14 Lambda – Serverless Compute  
+* Lesson 14 Lambda - Serverless Compute  
 * Lesson 15 Elastic Beanstalk  
 * Lesson 16 Kinesis  
 * Lesson 17 API Gateway  
 
-**Module 6 Developing in AWS**  
+**Developing in AWS**  
 
 * Lesson 18 CloudFormation  
 * Lesson 19 AWS Developer Tools  
