@@ -28,7 +28,7 @@ SSH can be run from the command line in the resulting window.
 The AWS CLI can be installed with python pip on Linux and Mac.  
 The AWS CLI is included in the Amazon Linux AMI running in EC2.  
 
-![Linux pip3 install awscli](https://bitbucket.org/awsdevguru/awsdevassoc/raw/7f8b55192218aedbf744fe16266d8ae447bf6724/03._Setting_up_a_Lab/images/pip3_install_awscli_linux.png)
+![Linux pip3 install awscli](https://bitbucket.org/awsdevguru/awsdevassoc/raw/28a86b687747d09a11d20c26fa3f3a639783974b/03._Setting_up_a_Lab/images/pip3_install_awscli_linux.png)
 
 ### Windows
 The Windows AWS CLI installer can be downloaded from:  
