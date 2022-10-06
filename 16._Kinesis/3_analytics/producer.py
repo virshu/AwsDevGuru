@@ -1,6 +1,11 @@
 import boto3    
 import time
 import json
+import sys
+
+
+
+
 
 stream_name = "SensorData"
 partition_key = "123"
@@ -9,6 +14,10 @@ print("\n> NOTE: This example runs in us-east-1 (N. VA)")
 
 with open('config.json') as s:
   settings = json.load(s)
+
+if settings["aws_access_key_id"] == "INSERT_KEY_ID":
+  print("ERROR: You have not configured your access and secret key in config.json")
+  sys.exit(1)
 
 kinesis = boto3.client('kinesis', aws_access_key_id = settings["aws_access_key_id"], aws_secret_access_key = settings["aws_secret_access_key"] , region_name = settings["aws_region"])
 

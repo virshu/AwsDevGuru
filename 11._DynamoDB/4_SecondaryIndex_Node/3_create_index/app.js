@@ -2,6 +2,12 @@ var AWS = require("aws-sdk");
 var fs = require("fs");
 
 AWS.config.loadFromPath('./config.json');
+
+if (AWS.config.credentials.accessKeyId === "YOUR_ACCESS_KEY_ID") {
+  console.log("ERROR: You have not configured your access and secret key in config.json");
+  process.exit(1)
+}
+
 var dynamodb = new AWS.DynamoDB();
 
 var tableName = "Olympics"
