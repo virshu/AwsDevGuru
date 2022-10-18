@@ -1,47 +1,49 @@
 # Overview 
-This course, "AWS Certified Developer Complete Video Course" focuses on the role-based certification, AWS Developer Associate.  According to Amazon, “this exam validates proficiency in developing, deploying, and debugging cloud-based applications using AWS.” Amazon Web Services currently has over 130 individual services available for use.  Each service falls into an overarching category such as compute, storage, database, networking, etc.  The AWS Developer Associate focuses on those services and concepts relevant to developers using, or intending to use, AWS services to create their applications.  This course covers the published blueprint for the Associate level Certified Developer exam.  
+The code in this repository is used for several courses taught through Pearson by Nick Garner.
 
-**It’s important to note that this course is not intended to teach you to how program or develop applications.  The goal is to help you understand the services that are available to run the applications you develop through live demonstration.**  Each lesson begins with a walk-through to provide an overview of the topic and then goes into demonstration mode.  The majority of the  demonstrations in this course are accomplished with a free AWS Trial Account so you can follow along.
+**It’s important to note that these courses are not intended to teach you to how program or develop applications.  The goal is to help you understand the services that are available to run the applications you develop through live demonstration.**  The majority of the  demonstrations in this course are accomplished with a free AWS Trial Account so you can follow along.
 
 ## Topics include: 
 
 **Course and AWS Overview**
 
-* Lesson 1 Course Overview  
-* Lesson 2 Cloud Services  
-* Lesson 3 Setting up a Lab  
+* Setting up a Lab  
 
 **AWS Foundational Services**  
 
-* Lesson 4 AWS CLI & SDK  
-* Lesson 5 Identity and Access Management (IAM)  
-* Lesson 6 Virtual Private Cloud (VPC)  
-* Lesson 7 Elastic Compute Cloud (EC2)  
-* Lesson 8 Route 53 DNS  
+* AWS CLI & SDK  
+* Identity and Access Management (IAM)  
+* Virtual Private Cloud (VPC)  
+* Elastic Compute Cloud (EC2)  
+* Route 53 DNS  
+* Cognito
 
 **Database and Storage Services**  
 
-* Lesson 9 Simple Storage Service (S3)  
-* Lesson 10 Databased (RDS / EC2)  
-* Lesson 11 DynamoDB (NoSQL)  
+* Simple Storage Service (S3)  
+* Databased (RDS / EC2)  
+* DynamoDB (NoSQL)  
 
 **Messaging Services**  
 
-* Lesson 12 Simple Queue Service (SQS)  
-* Lesson 13 Simple Notification Service (SNS)  
+* Simple Queue Service (SQS)  
+* Simple Notification Service (SNS)  
+* Simple Email Service (SES)
 
 **Execution Services**  
 
-* Lesson 14 Lambda - Serverless Compute  
-* Lesson 15 Elastic Beanstalk  
-* Lesson 16 Kinesis  
-* Lesson 17 API Gateway  
+* Lambda - Serverless Compute  
+* Elastic Beanstalk  
+* Kinesis  
+* API Gateway  
+* CloudWatch
+* Elastic Container Service (ECS)
 
 **Developing in AWS**  
 
-* Lesson 18 CloudFormation  
-* Lesson 19 AWS Developer Tools  
-* Lesson 20 AWS Shared Responsibility Model  
+* CloudFormation  
+* AWS Developer Tools  
+* AWS Shared Responsibility Model  
 
 
 # About the Instructor
