@@ -23,7 +23,11 @@ ec2.describeInstances(null, function(err, data) {
               name = tag['Value'];
             }
           });
-          console.log("Name: " + name + "\t\tPub. IP: " + instance.PublicIpAddress);
+          if (name.length < 10) {
+            console.log("Name: " + name + "\t\t\tPub. IP: " + instance.PublicIpAddress);
+          } else {
+            console.log("Name: " + name + "\t\tPub. IP: " + instance.PublicIpAddress);
+          }
         });
       });
     }
