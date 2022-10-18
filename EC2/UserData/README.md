@@ -8,5 +8,5 @@ chkconfig httpd on
 systemctl start httpd
 
 cd /var/www/html
-wget https://bitbucket.org/awsdevguru/awsdevassoc/raw/549b54852cf3b5a8fae60dc55e0f3facb19ff2a8/07._EC2/UserData/index.php
+wget https://bitbucket.org/awsdevguru/awsdevassoc/raw/cd3108e6d85d08f561136505f372f2728048a562/07._EC2/UserData/index.php
 ```
