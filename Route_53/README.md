@@ -1,4 +1,4 @@
-# AWS Developer Associate - Route53
+# AWS Developer - Route53
 The Route53 service provides hosted DNS services.
 
 ## CLI Command Examples Discussed

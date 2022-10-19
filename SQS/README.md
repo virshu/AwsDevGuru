@@ -1,4 +1,4 @@
-# AWS Developer Associate - SQS
+# AWS Developer - SQS
 The AWS SQS service provides fully managed message queues for microservices, distributed systems, and serverless applications.
 
 ## CLI Command Examples

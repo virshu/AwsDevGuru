@@ -1,4 +1,4 @@
-# AWS Developer Associate - CodeCommit
+# AWS Developer - CodeCommit
 
 ## CLI Command Examples
 

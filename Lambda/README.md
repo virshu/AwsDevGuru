@@ -1,2 +1,2 @@
-# AWS Developer Associate - Lambda
+# AWS Developer - Lambda
 

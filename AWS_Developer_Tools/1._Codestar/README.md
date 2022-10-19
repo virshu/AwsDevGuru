@@ -1,2 +1,2 @@
-# AWS Developer Associate - Codestar
+# AWS Developer - Codestar
 

@@ -1,4 +1,4 @@
-# AWS Developer Associate - Setting up a Lab
+# AWS Developer - Setting up a Lab
 
 
 ## SSH Clients  

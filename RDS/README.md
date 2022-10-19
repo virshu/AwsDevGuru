@@ -1,3 +1,3 @@
-# AWS Developer Associate - Databases (RDS)
+# AWS Developer - Databases (RDS)
 
 

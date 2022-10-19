@@ -1,2 +1,2 @@
-# AWS Developer Associate - API Gateway
+# AWS Developer - API Gateway
 

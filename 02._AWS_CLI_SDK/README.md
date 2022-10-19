@@ -1,4 +1,4 @@
-# AWS Developer Associate - AWS CLI & SDK
+# AWS Developer - AWS CLI & SDK
 The AWS command line interface (CLI) must be configured prior to use. 
 
 ## AWS CLI Examples
