@@ -1,4 +1,4 @@
-# AWS Developer Associate - VPC
+# AWS Developer - VPC
 
 ## VPC Creation  
 Diagram used for VPC  

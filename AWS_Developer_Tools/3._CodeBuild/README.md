@@ -1,2 +1,2 @@
-# AWS Developer Associate - CodeBuild
+# AWS Developer - CodeBuild
 

@@ -1,4 +1,4 @@
-# AWS Developer Associate - IAM
+# AWS Developer - IAM
 
 The IAM service provides that means to create user accounts that can be used for either interactive or programmatic access to AWS services.
 

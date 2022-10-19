@@ -1,4 +1,4 @@
-# AWS Developer Associate - SNS
+# AWS Developer - SNS
 The AWS SNS service provides fully managed pub/sub messaging and mobile notifications service.
 
 ## CLI Command Examples

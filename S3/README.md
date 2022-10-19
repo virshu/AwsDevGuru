@@ -1,4 +1,4 @@
-# AWS Developer Associate - S3
+# AWS Developer - S3
 The Simple Storage Service provides file storage services.
 
 ## CLI Command Examples Discussed

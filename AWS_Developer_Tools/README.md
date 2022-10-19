@@ -1,2 +1,2 @@
-# AWS Developer Associate - Developer Tools
+# AWS Developer - Developer Tools
 

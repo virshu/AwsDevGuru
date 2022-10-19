@@ -1,4 +1,4 @@
-# AWS Developer Associate - CodeDeploy
+# AWS Developer - CodeDeploy
 
 
 ## CLI Command Examples

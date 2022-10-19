@@ -1,2 +1,2 @@
-# AWS Developer Associate - CodePipeline
+# AWS Developer - CodePipeline
 

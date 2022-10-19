@@ -1,4 +1,4 @@
-# AWS Developer Associate - X-Ray
+# AWS Developer - X-Ray
 
 ## Install Deps
 ```

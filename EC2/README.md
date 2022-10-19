@@ -1,4 +1,4 @@
-# AWS Developer Associate - EC2
+# AWS Developer - EC2
 
 The EC2 service provides the ability to launch compute instances in AWS.
 

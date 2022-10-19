@@ -1,4 +1,4 @@
-# AWS Developer Associate - DynamoDB
+# AWS Developer - DynamoDB
 
 The DynamoDB service provides a managed NoSQL database.
 
