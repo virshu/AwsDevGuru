@@ -14,7 +14,7 @@ aws s3api put-bucket-policy --bucket $BUCKET_NAME --policy '{ "Version": "2012-1
 
 #Test
 echo "> Test static webpage:"
-curl http://$BUCKET_NAME.s3-website.us-west-1.amazonaws.com/test.html
+curl http://$BUCKET_NAME.s3-website.us-east-1.amazonaws.com/test.html
 echo "> The static website URL:"
-echo "http://$BUCKET_NAME.s3-website.us-west-1.amazonaws.com/"
+echo "http://$BUCKET_NAME.s3-website.us-east-1.amazonaws.com/"
 
