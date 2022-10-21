@@ -51,7 +51,7 @@ for filename in os.listdir("files"):
 print("\n>> You can now go to the webconsole and see the new bucket and view the files we've just uploaded.")
 print(">> e.g. https://s3-"+regionName+".amazonaws.com/"+bucketName+"/rainbow.jpg")
 
-d = raw_input(">> Would you like to delete the bucket? <y|n> ")
+d = input(">> Would you like to delete the bucket? <y|n> ")
 if (d == "y"):
   print("\n>>> Removing all objects from bucket:")
   theBucket = s3r.Bucket(bucketName)

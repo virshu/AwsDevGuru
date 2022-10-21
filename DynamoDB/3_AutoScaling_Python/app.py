@@ -83,7 +83,7 @@ print("  It took " + str(firstInsertStop-firstInsertStart) + " seconds.")
 # Pause
 #
 print("\nPlease head to the AWS Web Console and enable auto-scaling on this table.")
-raw_input("Press Enter to continue...")
+input("Press Enter to continue...")
 
 #
 # Put second set of items
