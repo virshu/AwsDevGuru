@@ -1,0 +1,5 @@
+# Ubuntu
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+sudo dpkg -i mysql*
+sudo apt update
+sudo apt install -y mysql-server

@@ -5,10 +5,14 @@ import shutil
 from random import randint
 import sys
 
-accessKey = 'INSERT_ACCESS_KEY'
-secretKey = 'INSERT_SECRET_KEY'
-regionName = 'INSERT_REGION_NAME'
-bucketName = 'INSERT_BUCKET_NAME'
+#accessKey = 'INSERT_ACCESS_KEY'
+#secretKey = 'INSERT_SECRET_KEY'
+regionName = 'us-east-2'
+#bucketName = 'INSERT_BUCKET_NAME'
+
+accessKey = 'AKIASEMQS3VFRQE3WZNP'
+secretKey = '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'
+bucketName = 'test-bucket-adgu33223322'
 
 s3 = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=regionName)
 s3r = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=regionName)
@@ -17,7 +21,7 @@ s3r = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=se
 # Create a new bucket
 #
 print(">> Creating bucket named: " + bucketName + "\n")
-cbResponse = s3.create_bucket(Bucket=bucketName, ACL='public-read', CreateBucketConfiguration={ 'LocationConstraint': 'us-west-2' })
+cbResponse = s3.create_bucket(Bucket=bucketName, ACL='public-read', CreateBucketConfiguration={ 'LocationConstraint': 'us-east-2' })
 print(">>> Create Bucket Response:\n" + json.dumps(cbResponse) + "\n")
 
 #
@@ -49,9 +53,10 @@ for filename in os.listdir("files"):
 
 
 print("\n>> You can now go to the webconsole and see the new bucket and view the files we've just uploaded.")
-print(">> e.g. https://s3-"+regionName+".amazonaws.com/"+bucketName+"/rainbow.jpg")
+print(">>    e.g. https://s3-"+regionName+".amazonaws.com/"+bucketName+"/rainbow.jpg")
+print(">> or e.g. https://"+bucketName+".s3."+regionName+".amazonaws.com/rainbow.jpg");
 
-d = raw_input(">> Would you like to delete the bucket? <y|n> ")
+d = input(">> Would you like to delete the bucket? <y|n> ")
 if (d == "y"):
   print("\n>>> Removing all objects from bucket:")
   theBucket = s3r.Bucket(bucketName)
