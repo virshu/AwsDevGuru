@@ -10,7 +10,8 @@ git add . --all
 echo "Committing Files."
 git commit -m "$DATE $1"
 echo "Pushing Files."
-git push -u origin master
+#git push -u origin master
 #git push -u origin 20221006-Updates
 #git push -u origin 20221018-updates
+git push -u origin 20221020-updates
 
