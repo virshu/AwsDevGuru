@@ -21,8 +21,6 @@ region = "us-east-1"
 configuration_set_name = "ses_configuration_set"
 access_key = "INSERT_KEY_ID"
 secret_key = "INSERT_SECRET_KEY"
-access_key = "AKIAWJRQE7BARCKGQ36M"
-secret_key = "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"
 
 if (access_key == "INSERT_KEY_ID"):
   print("Please configurat access_key, etc.");
