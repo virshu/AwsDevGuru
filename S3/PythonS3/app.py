@@ -5,14 +5,10 @@ import shutil
 from random import randint
 import sys
 
-#accessKey = 'INSERT_ACCESS_KEY'
-#secretKey = 'INSERT_SECRET_KEY'
+accessKey = 'INSERT_ACCESS_KEY'
+secretKey = 'INSERT_SECRET_KEY'
 regionName = 'us-east-2'
-#bucketName = 'INSERT_BUCKET_NAME'
-
-accessKey = 'AKIASEMQS3VFRQE3WZNP'
-secretKey = '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'
-bucketName = 'test-bucket-adgu33223322'
+bucketName = 'INSERT_BUCKET_NAME'
 
 s3 = boto3.client('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=regionName)
 s3r = boto3.resource('s3', aws_access_key_id=accessKey, aws_secret_access_key=secretKey, region_name=regionName)
