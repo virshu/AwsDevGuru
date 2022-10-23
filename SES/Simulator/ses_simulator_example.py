@@ -14,16 +14,15 @@ import boto3
 # 
 
 sns_topic_name = "ses_simulator_test_topic"
-#email = "INSERT_EMAIL"
-email = "nick@awsdev.guru"
-#region = "INSERT_REGION"
-region = "us-east-1"
+email = "INSERT_EMAIL"
+region = "INSERT_REGION"
 configuration_set_name = "ses_configuration_set"
 access_key = "INSERT_KEY_ID"
 secret_key = "INSERT_SECRET_KEY"
 
+
 if (access_key == "INSERT_KEY_ID"):
-  print("Please configurat access_key, etc.");
+  print("Please configure access_key, etc.");
   exit(1);
 
 sns_client = boto3.client('sns', aws_access_key_id=access_key, aws_secret_access_key=secret_key, region_name=region)
@@ -76,3 +75,90 @@ print(response)
 
 
 print("\nSending bounce email to simulator")
+response = ses_client.send_email(
+    Source=email,
+    Destination={
+        'ToAddresses': [
+            'bounce@simulator.amazonses.com',
+        ]
+    },
+    Message={
+        'Subject': {
+            'Data': 'Test to bounce',
+            'Charset': 'UTF-8'
+        },
+        'Body': {
+            'Text': {
+                'Data': 'This is a test to the simulator bounce address.',
+                'Charset': 'UTF-8'
+            }
+        }
+    },
+    ConfigurationSetName=configuration_set_name
+)
+print(response)
+
+# Sleep to comply with sandbox rate limit
+time.sleep(1)
+
+print("\nSending ooto email to simulator")
+response = ses_client.send_email(
+    Source=email,
+    Destination={
+        'ToAddresses': [
+            'ooto@simulator.amazonses.com',
+        ]
+    },
+    Message={
+        'Subject': {
+            'Data': 'Test to OOTO',
+            'Charset': 'UTF-8'
+        },
+        'Body': {
+            'Text': {
+                'Data': 'This is a test to the simulator OOTO address.',
+                'Charset': 'UTF-8'
+            }
+        }
+    },
+    ConfigurationSetName=configuration_set_name
+)
+print(response)
+
+# Sleep to comply with sandbox rate limit
+time.sleep(1)
+
+print("\nSending complaint email to simulator")
+response = ses_client.send_email(
+    Source=email,
+    Destination={
+        'ToAddresses': [
+            'complaint@simulator.amazonses.com',
+        ]
+    },
+    Message={
+        'Subject': {
+            'Data': 'Test to Complaint',
+            'Charset': 'UTF-8'
+        },
+        'Body': {
+            'Text': {
+                'Data': 'This is a test to the simulator complaint address.',
+                'Charset': 'UTF-8'
+            }
+        }
+    },
+    ConfigurationSetName=configuration_set_name
+)
+print(response)
+
+
+
+print("\n\n")
+print("Please check the inbox for " + email + " for messages from the SNS topic.")
+print("\n\n")
+print("To clean up, delete:")
+print(" - SNS Topic email subscription: " + email)
+print(" - SNS Topic: " + sns_topic_name)
+print(" - SES verified email: " + email)
+print(" - SES configuration set: " + configuration_set_name)
