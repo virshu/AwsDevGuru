@@ -1,7 +1,16 @@
 import boto3    
+import signal
 import time
 import json
 import sys
+
+
+keep_going = True
+
+def signal_handler(sig, frame):
+  global keep_going
+  print('Exiting...')
+  keep_going = False
 
 with open('config.json') as s:
   settings = json.load(s)
@@ -21,15 +30,20 @@ print("  Loaded " + str(len(logs)) + " log entries.")
 
 count = 0
 
+signal.signal(signal.SIGINT, signal_handler)
+
 print("\n> Putting log entries, check out S3 bucket.")
 for log in logs:
-  print("  Putting entry: " + str(count))
-  response = firehose.put_record(
-    DeliveryStreamName='ApacheLogs',
-    Record={
-      'Data': log
-    }
-  )
-  #print(response)
-  count += 1
-  time.sleep(1)
+  if keep_going == True:
+    print("  Putting entry: " + str(count))
+    response = firehose.put_record(
+      DeliveryStreamName='ApacheLogs',
+      Record={
+        'Data': log
+      }
+    )
+    #print(response)
+    count += 1
+    time.sleep(0.05)
+  else:
+    break

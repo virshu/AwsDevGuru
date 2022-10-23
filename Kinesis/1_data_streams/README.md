@@ -4,7 +4,7 @@
 
 **Create Stream**
 ```
-ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python create_stream.py 
+ubuntu@adgu$ python3 create_stream.py 
 
 > Current Streams
   None
@@ -13,8 +13,6 @@ ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python create_stream.py
   Response status code: 200
 
 > Waiting for stream status: ACTIVE
-  Status: CREATING
-  Status: CREATING
   Status: CREATING
   Status: CREATING
   Status: CREATING
@@ -30,7 +28,7 @@ ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python create_stream.py
 
 **Producer**
 ```
-ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python producer.py 
+ubuntu@adgu$ python3 producer.py 
 
 > Loading words.json
   Loaded 436 words.
@@ -42,36 +40,45 @@ ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python producer.py
   Sending: afeard/afeared
   Sending: affright
   Sending: ague
+  Sending: aliment
+  Sending: ambuscade
+  Sending: animalcule
+  Sending: apothecary
+  Sending: appetency
+  Sending: assay
+  Sending: asunder
 <cut>
 ```
 
 **Consumer**
 ```
-ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python consumer.py 
-> Polling stream every 500 ms
-  Got record: {"definition": "out of doors", "word": "abroad"}
-  Got record: {"definition": "birthing", "word": "accouchement"}
-  Got record: {"definition": "a notice to readers in a book", "word": "advertisement"}
-  Got record: {"definition": "frightened", "word": "afeard/afeared"}
+ubuntu@adgu$ python3 consumer.py
+> Polling stream every 100 ms
+  Got record: b'{"word": "abroad", "definition": "out of doors"}'
+  Got record: b'{"word": "accouchement", "definition": "birthing"}'
+  Got record: b'{"word": "advertisement", "definition": "a notice to readers in a book"}'
+  Got record: b'{"word": "afeard/afeared", "definition": "frightened"}'
+  Got record: b'{"word": "affright", "definition": "frighten (someone)"}'
+  Got record: b'{"word": "ague", "definition": "malaria or a similar illness"}'
+  Got record: b'{"word": "aliment", "definition": "food; nourishment"}'
+  Got record: b'{"word": "ambuscade", "definition": "an ambush"}'
+  Got record: b'{"word": "animalcule", "definition": "a microscopic animal"}'
+  Got record: b'{"word": "apothecary", "definition": "a person who prepared and sold medicine"}'
+  Got record: b'{"word": "appetency", "definition": "a longing or desire"}'
 <cut>
 ```
 
 **Delete Stream**
 ```
-ubuntu@adgu:~/awsdevassoc/16._Kinesis/1_data_streams$ python delete_stream.py 
+ubuntu@adgu$ python3 delete_stream.py 
 
 > Current Streams
   TestStream
 
-> Creating Test Stream
+> Deleting Test Stream
   Response status code: 200
 
 > Waiting for deletion
-  Status: DELETING
-  Status: DELETING
-  Status: DELETING
-  Status: DELETING
-  Status: DELETING
   Status: DELETING
   Status: DELETING
   Status: DELETING

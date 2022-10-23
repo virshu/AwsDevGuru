@@ -1,4 +1,4 @@
-# Python Kinesis Firehose Put Example
+# Python Kinesis Analytics Example
 
 ## Outputs
 
