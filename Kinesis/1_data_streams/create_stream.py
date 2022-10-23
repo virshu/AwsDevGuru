@@ -34,7 +34,7 @@ while True:
       print("  Status: " + status)
       if status == "ACTIVE":
         break
-    time.sleep(2)
+    time.sleep(1)
   #except: 
     #break
 

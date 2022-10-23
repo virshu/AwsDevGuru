@@ -19,12 +19,12 @@ def list_streams():
 
 list_streams()
 
-print("\n> Creating Test Stream")
+print("\n> Deleting Test Stream")
 response = kinesis.delete_stream(StreamName=settings["stream_name"])
 status = response["ResponseMetadata"]["HTTPStatusCode"]
 print("  Response status code: " + str(status))
 if status != 200: 
-  print("  It appears there was an error creating the stream.  Exiting.")
+  print("  It appears there was an error deleting the stream.  Exiting.")
 
 
 print("\n> Waiting for deletion")
