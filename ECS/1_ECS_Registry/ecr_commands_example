@@ -1,0 +1,10 @@
+# NOTE: These are the commands to get a docker image up into a private repository.
+# These are not the commands you would run as the account number and repo name would be different.
+
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 432818944065.dkr.ecr.us-east-1.amazonaws.com
+
+docker build -t adgu .
+docker tag adgu:latest 432818944065.dkr.ecr.us-east-1.amazonaws.com/adgu:latest
+docker push 432818944065.dkr.ecr.us-east-1.amazonaws.com/adgu:latest
+
