@@ -1,2 +1,5 @@
 
 02._AWS_CLI_SDK/NodeExample/config.json
+obj/
+bin/
+.vs/
