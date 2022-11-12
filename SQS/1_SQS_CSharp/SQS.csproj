@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AWSSDK.EC2" Version="3.7.107.1" />
-  </ItemGroup>
-
 </Project>
