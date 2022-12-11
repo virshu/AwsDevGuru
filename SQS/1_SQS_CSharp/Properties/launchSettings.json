@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SQS": {
+      "commandName": "Project",
+      "commandLineArgs": "-w -p csun"
+    }
+  }
+}
