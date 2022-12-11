@@ -2,7 +2,7 @@
   "profiles": {
     "SQS": {
       "commandName": "Project",
-      "commandLineArgs": "-w -p csun"
+      "commandLineArgs": "-r -p csun"
     }
   }
 }

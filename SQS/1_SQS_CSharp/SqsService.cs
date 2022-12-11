@@ -5,7 +5,9 @@ using Amazon.Runtime.CredentialManagement;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using CommandLine;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using VotesData;
 
 namespace SQS;
 
@@ -19,10 +21,12 @@ public class SqsService : ISqsService
     private readonly IConfiguration _config;
     private AmazonSQSClient? _sqs;
     private string? _queueUrl;
+    private readonly VotesContext _db;
 
-    public SqsService(IConfiguration config)
+    public SqsService(IConfiguration config, VotesContext db)
     {
         _config = config;
+        _db = db;
     }
 
     public async Task Run(IEnumerable<string> args)
@@ -57,7 +61,7 @@ public class SqsService : ISqsService
         {
             GetQueueUrlRequest request = new()
             {
-                QueueName = _config["queueName"]
+                QueueName = _config["SQS:queueName"]
             };
             GetQueueUrlResponse? response =await _sqs.GetQueueUrlAsync(request);
             if (response is null)
@@ -95,32 +99,55 @@ public class SqsService : ISqsService
             QueueUrl = _queueUrl
         };
         ReceiveMessageResponse? response = await _sqs.ReceiveMessageAsync(request);
-        if (response.Messages.Count > 0)
+        while (response.Messages.Count > 0)
         {
             foreach (Message message in response.Messages)
             {
-                Console.WriteLine(message.Body);
+                TvVote vote = JsonSerializer.Deserialize<TvVote>(message.Body)!;
+                Votes? voteName = await _db.Votes.SingleOrDefaultAsync(v => v.Name == vote.VoteFor);
+                if (voteName != null)
+                {
+                    voteName.VoteCount++;
+                }
+                else
+                {
+                    voteName = new Votes
+                    {
+                        VoteCount = 1,
+                        Name = vote.VoteFor
+                    };
+                    await _db.Votes.AddAsync(voteName);
+                }
+
+                await _db.SaveChangesAsync();
+                await _sqs.DeleteMessageAsync(_queueUrl, message.ReceiptHandle);
             }
+
+            response = await _sqs.ReceiveMessageAsync(request);
         }
     }
 
     private async Task ProduceMessagesAsync()
     {
-        Random rnd = new();
-        int messageTotal = _config.GetValue<int>("messageTotal");
-        string[] contestants = _config.GetSection("contestants").Get<string[]>()!;
-        Console.WriteLine($"> Casting {messageTotal} votes to url: {_queueUrl}");
-        Console.WriteLine("Note: On send, only errors are logged to the console.  Silence == success");
-
         if (_sqs is null)
         {
             throw new NullReferenceException("Posting to empty Queue");
         }
 
+        Random rnd = new();
+        int messageTotal = _config.GetValue<int>("SQS:messageTotal");
+        string[] contestants = _config.GetSection("contestants").Get<string[]>()!;
+        Console.WriteLine($"> Casting {messageTotal} votes to url: {_queueUrl}");
+        Console.WriteLine("Note: On send, only errors are logged to the console.  Silence == success");
+
         for (int i = 0; i < messageTotal; i++)
         {
-            string c = contestants[rnd.Next(contestants.Length)];
-            string vote = $"voteId: {i}, voteFor: {c}";
+            string contestant = contestants[rnd.Next(contestants.Length)];
+            TvVote vote = new()
+            {
+                VoteId = i,
+                VoteFor = contestant
+            };
 
             SendMessageRequest request = new()
             {
@@ -133,7 +160,7 @@ public class SqsService : ISqsService
                         StringValue = DateTime.Now.Ticks.ToString()
                     }
                 },
-                MessageBody = vote,
+                MessageBody = JsonSerializer.Serialize(vote),
                 QueueUrl = _queueUrl
             };
             await _sqs.SendMessageAsync(request);
@@ -142,11 +169,11 @@ public class SqsService : ISqsService
 
     private async Task CreateQueueAsync()
     {
-        string QueueName = _config["queueName"]!;
+        string queueName = _config["Sqs:queueName"]!;
         CreateQueueResponse result;
         try
         {
-            result = await _sqs!.CreateQueueAsync(QueueName);
+            result = await _sqs!.CreateQueueAsync(queueName);
         }
         catch (AmazonSQSException e)
         {
@@ -175,4 +202,10 @@ public class SqsService : ISqsService
 
         _sqs = new(awsCredentials);
     }
+}
+
+internal record TvVote
+{
+    public int VoteId { get; init; }
+    public string VoteFor { get; init; } = null!;
 }
