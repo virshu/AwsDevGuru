@@ -3,3 +3,5 @@
 obj/
 bin/
 .vs/
+/SQS/1_SQS_CSharp/appsettings.json
+/SQS/VotesData/appsettings.json
